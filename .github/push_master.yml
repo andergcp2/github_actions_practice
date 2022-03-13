@@ -1,0 +1,14 @@
+name: Push_master
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  job1:
+    name: Imprimir
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout de repositorio
+        uses: actions/checkout@v2
+      - name: echo "Everything is gonna be alright"
