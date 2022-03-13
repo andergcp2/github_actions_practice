@@ -11,4 +11,6 @@ jobs:
     steps:
       - name: Checkout de repositorio
         uses: actions/checkout@v2
-      - name: echo "Everything is gonna be alright"
+      - name: printing
+      uses: actions/checkout@v2
+        uses: echo "All good"
