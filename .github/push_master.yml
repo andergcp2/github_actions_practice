@@ -12,4 +12,4 @@ jobs:
       - name: Checkout de repositorio
         uses: actions/checkout@v2
       - name: printing
-        uses: echo "All good"
+        run: echo All good
