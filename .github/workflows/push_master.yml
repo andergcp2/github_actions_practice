@@ -2,7 +2,9 @@ name: Push_master
 
 on:
   push:
-    branches: [main]
+    branches: [release/*]
+  pull_request:
+    branches: [release/*]
 
 jobs:
   job1:
@@ -13,3 +15,13 @@ jobs:
         uses: actions/checkout@v2
       - name: printing
         run: echo All good
+  job2:
+    needs: job1
+    name: Fusionar_a_main
+    runs-on: ubuntu-latest
+    steps:
+      - name: automerge
+        uses: "pascalgn/automerge-action@4536e8847eb62fe2f0ee52c8fa92d17aa97f932f"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          MERGE_LABELS: ""
